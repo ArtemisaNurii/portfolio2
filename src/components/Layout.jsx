@@ -24,9 +24,9 @@ const Layout = () => {
                 <Outlet />
             </main>
 
-            {/* <section ref={footerRef}>
+            <section ref={footerRef}>
                 <Footer />
-            </section> */}
+            </section>
         </>
     )
 }

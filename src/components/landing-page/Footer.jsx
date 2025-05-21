@@ -96,14 +96,9 @@ const Footer = () => {
 
     return (
         <>
-            <Marquee>
-                <div className="flex items-center gap-x-[50px] md:gap-x-[100px] opacity-[0.25]">
-                    <h2 className="text-large-m md:text-large-d whitespace-nowrap">Contact Us</h2>
-                    <span className="block h-[15px] md:h-[20px] w-[120px] md:w-[200px] bg-myBlack mr-[50px] md:mr-[100px] translate-y-[100%]" />
-                </div>
-            </Marquee>
+         
 
-            <footer ref={containerRef} className='overflow-hidden h-full lg:h-[50vh] w-full px-mobile lg:px-desktop-h flex flex-col justify-between pb-[30px] lg:pb-[50px]'>
+            <footer ref={containerRef} className='overflow-hidden h-full lg:h-[50vh] w-full px-mobile lg:px-desktop-h flex flex-col justify-between pb-[30px] lg:pb-[50px] bg-myBlack  text-white'>
 
                 <div className='flex flex-col lg:flex-row justify-between gap-y-[60px] lg:gap-y-[unset] mb-[60px] lg:mb-[unset]'>
                     {/* "LETS BUILD" ===TEXT=== */}
@@ -181,20 +176,25 @@ const Footer = () => {
                     onMouseLeave={() => setTrackCursor(false)}
                     className={`relative w-full h-[90px] justify-center transition-opacity duration-[400ms] ${emailCopied ? "opacity-40" : ""} hidden lg:flex`}>
 
-                    <span ref={(el) => bordersRef.current[0] = el} className='absolute w-full h-[1px] top-0 left-0 bg-myBlack opacity-40' />
+                    <span ref={(el) => bordersRef.current[0] = el} className='absolute w-full h-[1px] top-0 left-0 bg-myWhite opacity-40' />
 
                     <span className='flex items-center gap-x-[5px] text-25-body'>
                         <span>{COMPANY_EMAIL}</span> {/* Use constant */}
                     </span>
 
-                    <span ref={(el) => bordersRef.current[1] = el} className='absolute w-full h-[1px] bottom-0 left-0 bg-myBlack opacity-40' />
+                    <span ref={(el) => bordersRef.current[1] = el} className='absolute w-full h-[1px] bottom-0 left-0 bg-myWhite opacity-40' />
 
                     <div ref={copyBoxRef}
-                        className='h-[70px] w-[70px] bg-myWhite border-1 border-myGray flex justify-center items-center absolute top-0 translate-[-50%] left-[25%] pointer-events-none'>
+                        className='h-[70px] w-[70px] bg-myBlack border-1 border-myGray flex justify-center items-center absolute top-0 translate-[-50%] left-[25%] pointer-events-none'>
                         Copy
                     </div>
                 </button>
-
+                <Marquee>
+                <div className="flex items-center gap-x-[50px] md:gap-x-[100px] opacity-[0.25]">
+                    <h2 className="text-large-m md:text-large-d whitespace-nowrap">Contact Us</h2>
+                    <span className="block h-[15px] md:h-[20px] w-[120px] md:w-[200px] bg-myBlack mr-[50px] md:mr-[100px] translate-y-[100%]" />
+                </div>
+            </Marquee>
                 {/* COPYRIGHTS STUFF */}
                 <div className='w-full flex justify-between'>
                     <SlideIn>
@@ -210,3 +210,5 @@ const Footer = () => {
 }
 
 export default Footer;
+
+

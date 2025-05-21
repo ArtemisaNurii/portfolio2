@@ -5,7 +5,9 @@ import Hero from './Hero';
 import Members from './Members';
 import SlidingImages from './SlidingImages';
 import Testimonials from './Testimonials';
-import Contact from './Contact';
+import Services from './Services';
+import Team from './Team';
+import Process from './Process';
 
 const LandingPage = () => {
     const { setSectionRefs } = useNavbarContext();
@@ -13,6 +15,8 @@ const LandingPage = () => {
     const aboutRef = useRef();
     const membersRef = useRef();
     const testimonialsRef = useRef();
+    const servicesRef= useRef();
+    const processRef = useRef();
 
     useEffect(() => {
         setSectionRefs(prev => ({
@@ -20,7 +24,9 @@ const LandingPage = () => {
             hero: heroRef,
             about: aboutRef,
             members: membersRef,
-            testimonials: testimonialsRef
+            testimonials: testimonialsRef,
+            services: servicesRef,
+            process: processRef,
         }))
     }, [setSectionRefs])
 
@@ -32,15 +38,18 @@ const LandingPage = () => {
             <section ref={aboutRef}>
                 <About />
             </section>
+            <section ref={processRef}>
+                <Process />
+            </section>
             <section ref={membersRef}>
-                <Members />
+                <Team />
             </section>
             <section ref={testimonialsRef}>
                 <Testimonials />
             </section>
+        
             <section className="overflow-x-hidden">
                 <SlidingImages />
-                <Contact />
             </section>
         </div>
     )

@@ -1,19 +1,26 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import image from '../../assets/images/image.jpg';
+import innovate from '../../assets/images/innovate.png';
+import image2 from '../../assets/images/image2.png';
+import image3 from '../../assets/images/image3.png';
+import image4 from '../../assets/images/image4.png';
+import image5 from '../../assets/images/image5.png';
+import GridDistortion from './DisortionGrid';
 
 const slider1 = [
-  { color: '#e3e5e7', src: image },
-  { color: '#d6d7dc', src: image },
-  { color: '#e3e3e3', src: image },
-  { color: '#21242b', src: image }
+  { color: '#21242b', src: image2 },
+  { color: '#21242b', src: innovate },
+
+  { color: '#21242b', src: image3 },
+
+  { color: '#21242b', src: image4 }
 ];
 
 const slider2 = [
-  { color: '#d4e3ec', src: image },
-  { color: '#e5e0e1', src: image },
-  { color: '#d7d4cf', src: image },
-  { color: '#e1dad6', src: image }
+  { color: '#21242b', src: image5 },
+  { color: '#21242b', src: image4 },
+  { color: '#21242b', src: image2 },
+  { color: '#21242b', src: innovate }
 ];
 
 export default function SlidingImages() {
@@ -23,7 +30,6 @@ export default function SlidingImages() {
     offset: ['start end', 'end start']
   });
 
-  // Adjust slide distance based on screen size
   const x1 = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const x2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
   const height = useTransform(scrollYProgress, [0, 0.9], [50, 0]);
@@ -44,13 +50,14 @@ export default function SlidingImages() {
             className="flex-shrink-0 w-1/2 sm:w-1/3 md:w-1/4 h-[60vw] sm:h-[40vw] md:h-[20vw] flex items-center justify-center"
             style={{ backgroundColor: project.color }}
           >
-            <div className="relative w-[80%] h-[80%]">
-              <img
-                alt="slide"
-                src={project.src}
-                className="object-contain w-full h-full"
-              />
-            </div>
+            <GridDistortion
+              imageSrc={project.src}
+              grid={20}
+              mouse={0.5}
+              strength={0.15}
+              relaxation={0.9}
+              className="w-full h-full object-contain"
+            />
           </div>
         ))}
       </motion.div>
@@ -66,13 +73,14 @@ export default function SlidingImages() {
             className="flex-shrink-0 w-1/2 sm:w-1/3 md:w-1/4 h-[60vw] sm:h-[40vw] md:h-[20vw] flex items-center justify-center"
             style={{ backgroundColor: project.color }}
           >
-            <div className="relative w-[80%] h-[80%]">
-              <img
-                alt="slide"
-                src={project.src}
-                className="object-contain w-full h-full"
-              />
-            </div>
+            <GridDistortion
+              imageSrc={project.src}
+              grid={20}
+              mouse={0.5}
+              strength={0.15}
+              relaxation={0.9}
+              className="w-full h-full object-contain"
+            />
           </div>
         ))}
       </motion.div>
