@@ -8,6 +8,10 @@ import './App.css'
 import CursorProvider from './components/contexts/CursorProvider'
 import CustomCursor from './components/global/CustomCursor'
 import Layout from './components/Layout'
+import CareerPage from './components/career-page/CareerPage'
+import Application from './components/career-page/Application'
+import Navbar from './components/navbar/Navbar'
+
 
 gsap.registerPlugin(CustomEase, ScrollTrigger, SplitText);
 
@@ -40,14 +44,18 @@ function App() {
         >
             <CursorProvider>
                 <CustomCursor />
+                
                 <BrowserRouter>
                     <Routes>
+
                         <Route
                             path='/'
                             element={
                                 <Layout />
                             }
                         />
+                          <Route path="/career" element={<CareerPage />} />
+                          <Route path="/application" element={<Application />} />
                     </Routes>
                 </BrowserRouter>
             </CursorProvider>

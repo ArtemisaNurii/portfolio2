@@ -98,7 +98,8 @@ import SlideIn from "../global/SlideIn";
 import useCursor from "../hooks/useCursor";
 import useDevice from "../hooks/useDevice";
 import Marquee from "./Marquee";
-import Squares from "../global/Squares";
+import Beams from "./Beams";
+// import Squares from "../global/Squares";
 const Hero = () => {
     const { navlinksLeft } = useNavbarContext();
     const { width: deviceWidth } = useDevice();
@@ -122,13 +123,16 @@ const Hero = () => {
             style={{ backfaceVisibility: "hidden" }}
         >
             <div className="absolute inset-0 z-0">
-                <Squares
-                    speed={0.5}
-                    squareSize={40}
-                    direction="diagonal"
-                    borderColor="#222"
-                    hoverFillColor="#FDFDFD"
-                />
+            <Beams
+    beamWidth={3}
+    beamHeight={15}
+    beamNumber={12}
+    lightColor="#E0FFFF"
+    speed={2}
+    noiseIntensity={1.75}
+    scale={0.2}
+    rotation={0}
+  />
             </div>
 
             <div
@@ -190,3 +194,53 @@ const Hero = () => {
 };
 
 export default Hero;
+
+
+// import React, { useState, useEffect } from 'react';
+// import BlobScene from './BlobScene';
+
+// const Hero = () => {
+//   const [currentWord, setCurrentWord] = useState(0);
+//   const words = ['innovation', 'performance', 'growth'];
+
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setCurrentWord((prev) => (prev + 1) % words.length);
+//     }, 2500);
+//     return () => clearInterval(interval);
+//   }, []);
+
+//   return (
+//     <section className="relative  bg-black text-white overflow-hidden">
+//       {/* Background Globe - Responsive */}
+//       <div className="absolute bottom-0 left-1/2 cursor-pointer transform -translate-x-1/2 translate-y-1/2 z-10">
+//         <div className="w-[100vw] h-[100vw] max-w-[1200px] max-h-[1200px] min-w-[320px] min-h-[320px] sm:w-[80vw] sm:h-[80vw] md:w-[900px] md:h-[900px] lg:w-[1200px] lg:h-[1200px]">
+//           <BlobScene />
+//         </div>
+//       </div>
+
+//       {/* Hero Content - Responsive */}
+//       <div className="relative z-20 flex flex-col items-center justify-start text-center px-4 sm:px-6 md:px-12 min-h-screen pt-32 sm:pt-36 md:pt-40 lg:pt-44">
+//         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight mb-20 sm:mb-6">
+//           Codevider
+//         </h1>
+                
+//         <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-300 font-light max-w-4xl">
+//           building for{' '}
+//           <span
+//             key={currentWord}
+//             className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-900 animate-fade-in"
+//           >
+//             {words[currentWord]}
+//           </span>
+//         </h3>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Hero;
+
+
+
+

@@ -1,10 +1,10 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import innovate from '../../assets/images/innovate.png';
-import image2 from '../../assets/images/image2.png';
-import image3 from '../../assets/images/image3.png';
-import image4 from '../../assets/images/image4.png';
-import image5 from '../../assets/images/image5.png';
+import innovate from '../../assets/images/INNOVATE.png';
+import image2 from '../../assets/images/INNOVATE.png';
+import image3 from '../../assets/images/INNOVATE.png';
+import image4 from '../../assets/images/INNOVATE.png';
+import image5 from '../../assets/images/INNOVATE.png';
 import GridDistortion from './DisortionGrid';
 
 const slider1 = [
@@ -52,9 +52,9 @@ export default function SlidingImages() {
           >
             <GridDistortion
               imageSrc={project.src}
-              grid={20}
-              mouse={0.5}
-              strength={0.15}
+              grid={15}
+              mouse={1}
+              strength={0.3}
               relaxation={0.9}
               className="w-full h-full object-contain"
             />

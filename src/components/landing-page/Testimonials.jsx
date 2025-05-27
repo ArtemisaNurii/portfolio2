@@ -8,7 +8,7 @@ import ButtonHighlight from '../buttons/ButtonHighlight';
 import { testimonials } from '../global/DummyData.js';
 import Magnetic from '../global/Magnetic';
 import TestimonialImageReveal from './TestimonialImageReveal.jsx';
-
+import Beams from './Beams.jsx';
 const Testimonials = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [allowNavigation, setAllowNavigation] = useState(true);
@@ -69,6 +69,18 @@ const Testimonials = () => {
         <section
             className="relative w-full h-[105vh] bg-myBlack text-myWhite my-[200px] p-mobile lg:p-desktop-h flex flex-col lg:flex-row justify-center items-center overflow-hidden"
         >
+                <div className="absolute inset-0 z-0">
+                        <Beams
+                beamWidth={3}
+                beamHeight={15}
+                beamNumber={12}
+                lightColor="#E0FFFF"
+                speed={2}
+                noiseIntensity={1.75}
+                scale={0.2}
+                rotation={0}
+              />
+                        </div>
             {/* TITLE TEXTS */}
             <motion.div className='absolute left-0 top-0 p-mobile lg:p-desktop-h flex justify-between w-full text-14-body'>
                 <span className='w-[65%]'>Testimonials</span>

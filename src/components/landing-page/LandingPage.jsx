@@ -2,13 +2,10 @@ import { useEffect, useRef } from 'react';
 import useNavbarContext from '../contexts/useNavbarContext';
 import About from './About';
 import Hero from './Hero';
-import Members from './Members';
-import SlidingImages from './SlidingImages';
+// import SlidingImages from './SlidingImages';
 import Testimonials from './Testimonials';
-import Services from './Services';
 import Team from './Team';
 import Process from './Process';
-
 const LandingPage = () => {
     const { setSectionRefs } = useNavbarContext();
     const heroRef = useRef();
@@ -48,9 +45,7 @@ const LandingPage = () => {
                 <Testimonials />
             </section>
         
-            <section className="overflow-x-hidden">
-                <SlidingImages />
-            </section>
+            
         </div>
     )
 }

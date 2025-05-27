@@ -4,6 +4,7 @@ import useNavbarContext from './contexts/useNavbarContext';
 import Footer from './landing-page/Footer';
 import LandingPage from './landing-page/LandingPage';
 import Navbar from './navbar/Navbar';
+// import CareerPage from './career-page/CareerPage';
 
 const Layout = () => {
     const footerRef = useRef();
