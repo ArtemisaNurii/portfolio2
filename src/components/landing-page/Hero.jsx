@@ -150,22 +150,22 @@ const Hero = () => {
               </h1>
           
               {/* Bottom Line - Innovating Through + RotatingText */}
-              <h2 className="text-3xl sm:text-4xl md:text-5xl flex items-center gap-3 pl-10 lg:pl-20  font-black">
-                <span>Innovating Through</span>
-                <div className="relative inline-block overflow-hidden">
-                  <RotatingText
-                    texts={['Code', 'Impact', 'Ideas']}
-                    mainClassName="px-3 md:px-4 bg-myAccent text-myBlack py-1 md:py-2 font-black"
-                    staggerFrom="last"
-                    initial={{ y: "100%" }}
-                    animate={{ y: 0 }}
-                    exit={{ y: "-120%" }}
-                    staggerDuration={0.025}
-                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                    rotationInterval={2000}
-                  />
-                </div>
-              </h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl flex flex-wrap items-center gap-1 sm:gap-2 lg:gap-3 pl-4 sm:pl-6 lg:pl-20 font-black max-xs:text-sm">
+  <span>Innovating Through</span>
+  <div className="relative inline-block overflow-hidden min-w-0">
+    <RotatingText
+      texts={['Code', 'Impact', 'Ideas']}
+      mainClassName="px-2 sm:px-3 md:px-4 bg-myAccent text-myBlack py-1 md:py-2 font-black whitespace-nowrap"
+      staggerFrom="last"
+      initial={{ y: "100%" }}
+      animate={{ y: 0 }}
+      exit={{ y: "-120%" }}
+      staggerDuration={0.025}
+      transition={{ type: "spring", damping: 30, stiffness: 400 }}
+      rotationInterval={2000}
+    />
+  </div>
+</h2>
             </div>
           </ScrollOpacity>
           

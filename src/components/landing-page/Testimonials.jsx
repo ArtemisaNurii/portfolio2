@@ -67,7 +67,7 @@ const Testimonials = () => {
 
     return (
         <section
-            className="relative w-full h-[105vh] bg-myBlack text-myWhite my-[200px] p-mobile lg:p-desktop-h flex flex-col lg:flex-row justify-center items-center overflow-hidden"
+            className="relative w-full h-screen bg-myBlack text-myWhite my-[200px] p-mobile lg:p-desktop-h flex flex-col lg:flex-row justify-center items-center overflow-hidden"
         >
                 <div className="absolute inset-0 z-0">
                         <Beams

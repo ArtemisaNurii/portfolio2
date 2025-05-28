@@ -236,7 +236,7 @@ const Footer = () => {
     gsap.to(footerEl, {
       y: 0,
       ease: "power3.out",
-      duration: 2,
+      duration: 4,
       scrollTrigger: {
         trigger: document.body,
         start: "bottom bottom",
@@ -268,9 +268,10 @@ const Footer = () => {
         className="fixed left-0 right-0 bottom-0 z-50 bg-black text-white"
       >
         {/* CODEVIDER BIG TEXT */}
-        <div className="flex flex-col items-center justify-center min-h-screen text-white font-black text-[80px] sm:text-[120px] lg:pt-44 lg:text-[160px] xl:text-[200px] leading-none tracking-tighter">
-            <SplitLineText        text="Let' Get in Touch"
-                        >  </SplitLineText>
+        <div className="flex flex-col items-center justify-center min-h-screen text-white font-black text-[80px] sm:text-[120px] lg:pt-44 lg:text-[160px] xl:text-[200px] xs:text-6xl leading-none tracking-tighter max-sm:pt-72">
+            <SplitLineText        
+            text="Let' Get in Touch"
+            >  </SplitLineText>
           {/* <DecryptedText
             text="Let's Get in Touch"
             animateOn="view"
@@ -280,7 +281,7 @@ const Footer = () => {
 
         {/* CONTACT SECTION */}
         <div className="px-8 py-8">
-          <div className="flex flex-wrap gap-6 mb-8 text-xs xl:text-xl uppercase justify-between tracking-wide">
+          <div className="flex flex-wrap max-sm:pb-10 gap-6 mb-8 text-xs xl:text-xl uppercase justify-between tracking-wide">
             {['LINKEDIN', 'X (TWITTER)', 'INSTAGRAM', 'FACEBOOK'].map((platform) => (
               <a key={platform} href="#" className="hover:text-white transition-colors cursor-pointer">
                 {platform}
@@ -289,29 +290,29 @@ const Footer = () => {
           </div>
 
           <div className="text-center mb-8">
-            <button
-              ref={copyButtonRef}
-              onClick={handleClick}
-              onMouseEnter={(e) => { setTrackCursor(true); moveHandler(e); }}
-              onMouseLeave={() => setTrackCursor(false)}
-              onMouseMove={moveHandler}
-              className={`relative w-full h-[90px] justify-center transition-opacity duration-[400ms] ${emailCopied ? "opacity-40" : ""} hidden lg:flex`}
-            >
-              <span ref={(el) => bordersRef.current[0] = el} className='absolute w-full h-[1px] top-0 left-0 bg-myWhite opacity-40' />
-              <span className='flex items-center gap-x-[5px] text-32-body'>
-                <span>{COMPANY_EMAIL}</span>
-              </span>
-              <span ref={(el) => bordersRef.current[1] = el} className='absolute w-full h-[1px] bottom-0 left-0 bg-myWhite opacity-40' />
-              <div
-                ref={copyBoxRef}
-                className='h-[70px] w-[70px] bg-myBlack border-1 border-myGray flex justify-center items-center absolute top-0 translate-[-50%] left-[25%] pointer-events-none'
-              >
-                Copy
-              </div>
-            </button>
+          <button
+  ref={copyButtonRef}
+  onClick={handleClick}
+  onMouseEnter={(e) => { setTrackCursor(true); moveHandler(e); }}
+  onMouseLeave={() => setTrackCursor(false)}
+  onMouseMove={moveHandler}
+  className={`relative w-full h-[60px] sm:h-[90px] flex justify-center items-center transition-opacity duration-[400ms] ${emailCopied ? "opacity-40" : ""}`}
+>
+  <span ref={(el) => bordersRef.current[0] = el} className='absolute w-full h-[1px] top-0 left-0 bg-myWhite opacity-40' />
+  <span className='flex items-center gap-x-[5px] text-32-body text-sm sm:text-base lg:text-xl'>
+    <span>{COMPANY_EMAIL}</span>
+  </span>
+  <span ref={(el) => bordersRef.current[1] = el} className='absolute w-full h-[1px] bottom-0 left-0 bg-myWhite opacity-40' />
+  <div
+    ref={copyBoxRef}
+    className='h-[50px] w-[50px] sm:h-[70px] sm:w-[70px] bg-myBlack border-1 border-myGray flex justify-center items-center absolute top-0 translate-[-50%] left-[25%] pointer-events-none text-xs sm:text-sm'
+  >
+    Copy
+  </div>
+</button>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-xs mb-8">
+ 
+          <div className="gap-10 flex justify-between  text-xs mb-8">
             <div>
               <div className="mb-2 xl:text-xl text-white">+355 4567543</div>
               <div className="text-gray-400 xl:text-xl leading-relaxed">

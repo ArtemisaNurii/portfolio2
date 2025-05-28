@@ -48,31 +48,31 @@ const ServiceCard = ({ title, abbreviation, description, icon }) => {
 
     return (
         <div
-            className="w-full p-4 sm:p-6 md:p-8 border-t md:border-t-0 md:border-l border-gray-700 cursor-pointer transition-all duration-300"
+            className="w-full p-4 sm:p-6 md:p-8 border-t md:border-t-0 md:border-l border-gray-700 cursor-pointer transition-all xl:mt-60 duration-300"
             onMouseEnter={handleExpandEnter}
             onMouseLeave={handleExpandLeave}
         >
             <div className="flex items-center mb-6">
                 <div className="w-6 h-6 mr-4 text-white">{icon}</div>
-                <span className="text-xs font-medium tracking-widest text-gray-400">{title}</span>
+                <span className="text-md font-medium tracking-widest text-gray-400">{title}</span>
             </div>
 
             <div className="relative overflow-hidden h-16 sm:h-20 md:h-24 select-none">
                 <div
                     ref={textRef}
-                    className="absolute inset-0 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white flex items-center pointer-events-none"
+                    className="absolute inset-0 text-4xl sm:text-5xl lg:text-5xl md:text-6xl font-bold   tracking-tight text-white flex items-center pointer-events-none"
                 >
                     {abbreviation}
                 </div>
                 <div
                     ref={titleRef}
-                    className="absolute inset-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white flex items-center pointer-events-none"
+                    className="absolute inset-0 text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight text-white flex items-center pointer-events-none"
                 >
                     {title}
                 </div>
             </div>
 
-            <p className="text-gray-300 text-sm leading-relaxed mt-4">{description}</p>
+            <p className="text-white text-sm leading-relaxed mt-4">{description}</p>
         </div>
     );
 };
